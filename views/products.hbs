@@ -1,0 +1,53 @@
+<div class="main-content">
+    <img src="/images/Logo.png" />
+
+  <h2 class="text-center mt-3 text-danger bg-dark"><marquee>Flash Sales With
+      More Than 50% Discount On Products</marquee></h2>
+  <hr />
+
+  <div class="products">
+    <div class="add-new">
+
+    </div>
+    <div class="row">
+
+      {{#each products}}
+        <div class="col-lg-4 col-md-6">
+          <div class="product">
+            <div class="product-image">
+              <img src="{{product_image}}" alt="{{product_name}}" />
+            </div>
+
+            <div class="product-details">
+              <div class="product-name">
+                {{product_name}}
+              </div>
+
+              <div class="product-category">
+                {{product_category}}
+              </div>
+
+              <hr />
+              <div class="product-description">
+                {{stripTags (truncate product_description)}}
+              </div>
+              <hr />
+
+              <div class="price-and-button">
+                <div class="product-price">
+                  <span>&#8358;</span>
+                  {{product_price}}
+                </div>
+
+                <div class="buy">
+                  <a href="/payment/{{_id}}">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {{/each}}
+    </div>
+  </div>
+</div>

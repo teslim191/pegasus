@@ -1,0 +1,101 @@
+<style>
+  span{
+    color: red;
+  }
+</style>
+<div id="signup">
+
+  <img src="/images/Logo.png" />
+
+  <h2>Create your free account</h2>
+
+  <div id="signup-form">
+{{> msg}}
+    <form action="/auth/register" method="POST">
+      <div>
+        <label for="fname">First Name</label><span>*</span><br />
+        <input
+          type="text"
+          id="fname"
+          name="first_name"
+          placeholder="Enter your first name"
+        />
+      </div>
+
+      <div>
+        <label for="lname">Last Name</label><span>*</span><br />
+        <input
+          type="text"
+          id="lname"
+          name="last_name"
+          placeholder="Enter your last name"
+        />
+
+      </div>
+
+      <div>
+        <label for="email">Email</label><span>*</span><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+        />
+      </div>
+      <div>
+        <label for="password">Password </label><span>*<br><small>must contain a number and special character(8-12)</small></span><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter a strong password"
+        /><i id="icon" class="fas fa-eye-slash" style="margin-left: -22px;cursor: pointer;"></i><br />
+      </div>
+      <div>
+        <label for="phone-number">Phone Number</label><span>*</span><br />
+        <input
+          id="phone"
+          type="tel"
+          name="phone"
+          placeholder="Enter your phone number"
+        />
+      </div>
+      <div>
+        <label for="bname">Business Name</label><span>*</span><br />
+        <input
+          type="text"
+          id="bname"
+          name="business_name"
+          placeholder="Enter your business name"
+        /><br />
+      </div>
+
+      <div>
+
+        <label for="country">Country</label><span>*</span><br />
+        <select id="countries" name="country">
+          <option value="Nigeria">Nigeria</option>
+          <option value="Ghana">Ghana</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Liberia">Liberia</option>
+          <option value="Uganda">Uganda</option>
+          <option value="Tanzania">Tanzania</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Gambia">Gambia</option>
+          <option value="Sierra Leone">Sierra Leone</option>
+          <option value="Rwanda">Rwanda</option>
+          <option value="Cote D'Ivoire">Cote D'Ivoire</option>
+        </select>
+      </div>
+
+      <input class="button" id="submit" type="submit" value="Create Account" />
+    </form>
+  </div>
+  <p>Already have a GTStore account? <a href="/auth/login">Sign in</a></p>
+
+  <p>By clicking
+    <b>Create Account</b>, you agree to
+    <br />our
+    <a href="./terms.html">Terms and Privacy Policy</a></p>
+
+</div>

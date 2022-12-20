@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Merchant's Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/dashboard.css" />
+        
+
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bxs-badge-check icon"></i>
+        <div class="logo_name">{{business_name}}
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a >
+            <i class="bx bxs-user"></i>
+            <span class="links_name"> <strong>UserID: {{id}}</strong></span>
+          </a>
+          <span class="tooltip">{{id}}</span>
+        </li>
+        <li>
+          <a href="/overview">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Overview</span>
+          </a>
+          <span class="tooltip">Overview</span>
+        </li>
+        <li>
+          <a href="/add-product">
+            <i class="bx bxs-shopping-bags"></i>
+            <span class="links_name">Products</span>
+          </a>
+          <span class="tooltip">Products</span>
+        </li>
+        <li>
+          <a href="/storefront">
+            <i class="bx bxs-store"></i>
+            <span class="links_name">Store Front</span>
+          </a>
+          <span class="tooltip">Store Front</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cart-alt"></i>
+            <span class="links_name">Orders and Invoices</span>
+          </a>
+          <span class="tooltip">Order and Invoices</span>
+        </li>
+        <li>
+          <a href="/account-setting">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Account Settings</span>
+          </a>
+          <span class="tooltip">Account Settings</span>
+        </li>
+
+        <li>
+          <a href="/logout">
+            <i class="bx bx-log-out" id="log_out"></i>
+            <span class="links_name">Log Out</span>
+          </a>
+          <span class="tooltip">Log Out</span>
+        </li>
+      </ul>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
+
+<div class="container">
+  {{{body}}}
+
+</div>

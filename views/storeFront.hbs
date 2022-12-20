@@ -1,0 +1,53 @@
+<section class="mt-5">
+  <h3 class="text-center">StoreFront</h3>
+{{> msg}}
+  {{#if product}}
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Product Image</th>
+          <th>Product Category</th>
+          <th>Quantity</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each product}}
+          <tr>
+            <td><a href="/products/{{_id}}">{{product_name}}</a></td>
+            <td>₦{{product_price}}.00</td>
+            <td><img
+                src="{{product_image}}"
+                style="width: 100px;"
+                alt=""
+              /></td>
+            <td>{{product_category}}</td>
+            <td>{{quantity}}</td>
+            <td>
+              <a href="/products/editpage/{{_id}}" class="btn btn-success">
+                <i class="fas fa-edit"></i>
+              </a>
+            </td>
+            <td>
+              <form
+                action="/products/delete/{{_id}}"
+                method="POST"
+                id="delete-form"
+              >
+                <input type="hidden" name="_method" value="DELETE" />
+                <button type="submit" class="btn btn-danger">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <p style="color: red;">You dont have any product yet</p>
+  {{/if}}
+</section>

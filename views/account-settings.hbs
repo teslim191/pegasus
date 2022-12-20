@@ -1,0 +1,90 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+/>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+></script>
+<style>
+  span{ color: red; }
+</style>
+<div id="account-settings">
+  <h2>Account Settings</h2><span>Update your account</span>
+  <hr />
+
+  <div class="content">
+        {{> msg}}
+    <h4>Business Information</h4>
+
+    <form
+      action="/account-settings"
+      method="POST"
+    >
+      <div>
+        <label for="Business Type">Business Type</label><br />
+        <select id="countries" name="business_type">
+          <option value="registered">Registered</option>
+          <option value="not registered">Not Registered</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="Product Type">Product Type</label><br />
+        <select id="countries" name="product_type">
+          <option value="phones & accessories">Phones and Accessories</option>
+          <option value="fashion">Fashion</option>
+          <option value="electronics">Electronics</option>
+          <option value="computing">Computing</option>
+          <option value="groceries">Groceries</option>
+          <option value="health & beauty">Health and Beauty</option>
+        </select>
+      </div>
+
+      <div>
+        <label for=" ">Business Address <span>*</span></label><br />
+        <input type="text" name="address" placeholder="Business address" />
+      </div>
+
+      <div>
+        <label for=" ">Bank Account Name</label><span>*</span><br />
+        <input
+          type="text"
+          name="bank_name"
+          value="GTBank",
+          readonly
+          placeholder="Business account name"
+        />
+      </div>
+
+      <div>
+        <label for=" ">Business Account Number</label><span>*</span><br />
+        <input
+          type="text"
+          name="acct_number"
+          placeholder="Business account number"
+        />
+      </div>
+
+      <div>
+        <label for=" ">Bank Verification Number</label><span>*</span><br />
+        <input type="text" name="BVN" placeholder="Bank verification number" />
+      </div>
+      <input
+        style="width: 50%"
+        class="button"
+        id="submit"
+        type="submit"
+        value="Save Changes"
+      />
+    </form>
+  </div>
+</div>
+
+<script>
+  const phoneInputField = document.querySelector("#phone"); const phoneInput =
+  window.intlTelInput(phoneInputField, { initialCountry: "ng",
+  preferredCountries: [ "ng", "uk", "ke", "ug", "ci", "rw", "sl", "tz", "gm",
+  "gh", ], utilsScript:
+  "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+</script>

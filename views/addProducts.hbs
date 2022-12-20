@@ -1,0 +1,85 @@
+<style>
+  span{
+    color: red;
+  }
+</style>
+<div class="main-content">
+  <h2>Add New Product</h2>
+  <hr />
+  <div class="content">
+    <form
+      action="/products/add-product"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+    {{> msg}}
+      <div>
+        <label for="product-name">Product Name <span>*</span></label><br />
+        <input
+          type="text"
+          id="product-name"
+          name="product_name"
+          placeholder="Product name"
+        />
+      </div>
+      <div>
+        <label for="product-description">Product Description<span>*</span></label><br />
+        <textarea
+          name="product_description"
+          id="product-description"
+        ></textarea>
+      </div>
+      <div>
+        <label for="price">Price<span>*</span></label><br />
+        <input
+          id="price"
+          type="number"
+          name="product_price"
+          placeholder="Enter price"
+        />
+      </div>
+      <div id="">
+        <label for="">Product Image<span>*</span></label>
+        <img src="" alt="" style="width: 100px" />
+        <input
+          type="file"
+          id="upload"
+          name="product_image"
+          style="padding: 20px;"
+          class="form-control"
+        />
+      </div>
+
+      <div>
+        <label for="product-name">Product Category<span>*</span></label><br />
+        <select name="product_category" id="product-category">
+          <option value="">select category</option>
+          <option value="phones & accessories">phones & accessories</option>
+          <option value="fashion">fashion</option>
+          <option value="electronics">electronics</option>
+          <option value="computing">computing</option>
+          <option value="groceries">groceries</option>
+          <option value="health & beauty">health & beauty</option>
+        </select>
+
+      </div>
+      <div>
+        <label for="price">Quantity<span>*</span></label><br />
+        <input
+          id="quantity"
+          type="number"
+          name="quantity"
+          placeholder="Enter available quantity"
+        />
+      </div>
+
+      <input
+        style="width: 50%;margin-left: 25%;margin-right: 25%;"
+        class="button"
+        id="submit"
+        type="submit"
+        value="Add Product"
+      />
+    </form>
+  </div>
+</div>

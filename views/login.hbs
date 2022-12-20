@@ -1,0 +1,43 @@
+<div id="main">
+  <img src="/images/Logo.png" />
+
+  <div id="login">
+    <h2 style="text-align: center;">Log into your account</h2>
+    {{> msg}}
+    <form action="/auth/login" method="post">
+      <div>
+        <label for="phone-email">Email</label><br />
+        <input
+          type="email"
+          id="phone-email"
+          name="email"
+          placeholder="Enter your business email"
+        />
+      </div>
+
+      <div class="">
+        <label for="password">Password</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+        /><span><i id="icon" class="fas fa-eye-slash" style="margin-left: -22px;cursor: pointer;"></i></span>
+      </div>
+
+      <a href="">
+        <input class="button" id="submit" type="submit" value="Login" />
+      </a>
+    </form>
+
+    <div id="foot" style="text-align: center;">
+      <p>Don't have an account?
+        <a href="/auth/register">Create Account</a>
+        <br />
+        Forget your password?
+        <a href="">Reset your password </a></p>
+    </div>
+  </div>
+
+</div>
+
